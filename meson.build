@@ -478,7 +478,6 @@ if not meson.is_subproject()
       'simde/check.h',
       'simde/debug-trap.h',
       'simde/hedley.h',
-      'simde/simde-aes.h',
       'simde/simde-align.h',
       'simde/simde-arch.h',
       'simde/simde-common.h',
