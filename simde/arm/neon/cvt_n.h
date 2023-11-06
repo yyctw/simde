@@ -58,7 +58,8 @@ simde_vcvth_n_s32_f16(simde_float16_t a, const int n)
       simde_float16_from_float32(
       simde_float16_to_float32(a) * HEDLEY_STATIC_CAST(simde_float32_t, pow(2, n))));
 }
-#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_s32_f16(a, n) vcvth_n_s32_f16(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A32V8_ENABLE_NATIVE_ALIASES)
@@ -74,7 +75,8 @@ simde_vcvth_n_s64_f16(simde_float16_t a, const int n)
       simde_float16_from_float32(
       simde_float16_to_float32(a) * HEDLEY_STATIC_CAST(simde_float32_t, pow(2, n))));
 }
-#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_s64_f16(a, n) vcvth_n_s64_f16(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A64V8_ENABLE_NATIVE_ALIASES)
@@ -106,7 +108,8 @@ simde_vcvth_n_u32_f16(simde_float16_t a, const int n)
       simde_float16_from_float32(
       simde_float16_to_float32(a) * HEDLEY_STATIC_CAST(simde_float32_t, pow(2, n))));
 }
-#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_u32_f16(a, n) vcvth_n_u32_f16(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A32V8_ENABLE_NATIVE_ALIASES)
@@ -122,7 +125,8 @@ simde_vcvth_n_u64_f16(simde_float16_t a, const int n)
       simde_float16_from_float32(
       simde_float16_to_float32(a) * HEDLEY_STATIC_CAST(simde_float32_t, pow(2, n))));
 }
-#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_u64_f16(a, n) vcvth_n_u64_f16(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A64V8_ENABLE_NATIVE_ALIASES)
@@ -154,7 +158,8 @@ simde_vcvth_n_f16_s32(int32_t a, const int n)
       HEDLEY_STATIC_CAST(simde_float32_t,
       HEDLEY_STATIC_CAST(simde_float64_t, a) / pow(2, n)));
 }
-#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_f16_s32(a, n) vcvth_n_f16_s32(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A32V8_ENABLE_NATIVE_ALIASES)
@@ -170,7 +175,8 @@ simde_vcvth_n_f16_s64(int64_t a, const int n)
       HEDLEY_STATIC_CAST(simde_float32_t,
       HEDLEY_STATIC_CAST(simde_float64_t, a) / pow(2, n)));
 }
-#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_f16_s64(a, n) vcvth_n_f16_s64(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A64V8_ENABLE_NATIVE_ALIASES)
@@ -202,7 +208,8 @@ simde_vcvth_n_f16_u32(uint32_t a, const int n)
       HEDLEY_STATIC_CAST(simde_float32_t,
       HEDLEY_STATIC_CAST(simde_float64_t, a) / pow(2, n)));
 }
-#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A32V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_f16_u32(a, n) vcvth_n_f16_u32(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A32V8_ENABLE_NATIVE_ALIASES)
@@ -218,7 +225,8 @@ simde_vcvth_n_f16_u64(uint64_t a, const int n)
       HEDLEY_STATIC_CAST(simde_float32_t,
       HEDLEY_STATIC_CAST(simde_float64_t, a) / pow(2, n)));
 }
-#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+#if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+    !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
   #define simde_vcvth_n_f16_u64(a, n) vcvth_n_f16_u64(a, n)
 #endif
 #if defined(SIMDE_ARM_NEON_A64V8_ENABLE_NATIVE_ALIASES)

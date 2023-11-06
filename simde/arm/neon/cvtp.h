@@ -91,7 +91,8 @@ simde_vcvtph_s32_f16(simde_float16_t a) {
 SIMDE_FUNCTION_ATTRIBUTES
 int16_t
 simde_vcvtph_s16_f16(simde_float16_t a) {
-  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+      !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
     return vcvtph_s16_f16(a);
   #elif defined(SIMDE_FAST_CONVERSION_RANGE)
     return HEDLEY_STATIC_CAST(int16_t,

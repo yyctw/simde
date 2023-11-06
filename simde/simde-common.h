@@ -1083,6 +1083,9 @@ HEDLEY_DIAGNOSTIC_POP
 #    if defined(SIMDE_ARCH_WASM_SIMD128) && !SIMDE_DETECT_CLANG_VERSION_CHECK(17,0,0)
 #      define SIMDE_BUG_CLANG_60655
 #    endif
+#    if defined(__APPLE__) && defined(SIMDE_ARM_NEON_FP16) && defined(SIMDE_ARM_NEON_A32V7_NATIVE)
+#      define SIMDE_BUG_APPLE_INCONSISTENT_RESULT
+#    endif
 #  elif defined(HEDLEY_MSVC_VERSION)
 #    if defined(SIMDE_ARCH_X86)
 #      define SIMDE_BUG_MSVC_ROUND_EXTRACT

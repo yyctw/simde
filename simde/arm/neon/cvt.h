@@ -142,7 +142,8 @@ simde_vcvt_f64_f32(simde_float32x2_t a) {
 SIMDE_FUNCTION_ATTRIBUTES
 int16_t
 simde_vcvth_s16_f16(simde_float16_t a) {
-  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+      !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
     return vcvth_s16_f16(a);
   #elif defined(SIMDE_FAST_CONVERSION_RANGE)
     return HEDLEY_STATIC_CAST(int16_t,
@@ -1386,7 +1387,8 @@ simde_vcvtq_f64_u64(simde_uint64x2_t a) {
 SIMDE_FUNCTION_ATTRIBUTES
 int16_t
 simde_vcvtah_s16_f16(simde_float16_t a) {
-  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16)
+  #if defined(SIMDE_ARM_NEON_A64V8_NATIVE) && defined(SIMDE_ARM_NEON_FP16) && \
+      !defined(SIMDE_BUG_APPLE_INCONSISTENT_RESULT)
     return vcvtah_s16_f16(a);
   #elif defined(SIMDE_FAST_CONVERSION_RANGE)
     return HEDLEY_STATIC_CAST(int16_t,
